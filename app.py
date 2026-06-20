@@ -13,46 +13,48 @@ st.set_page_config(
 )
 
 # 2. Tùy biến giao diện (CSS Custom Theme) phối màu Emerald & Slate cực sang
-st.markdown("""
-    <style>
-    /* Chỉnh toàn bộ phông chữ và nền */
-    .reportview-container { background: #fdfdfd; }
-    
-    /* Thiết kế thẻ Card cho kết quả chính */
-    .premium-card {
-        background: linear-gradient(135deg, #0f9b0f 0%, #006400 100%);
-        color: white;
-        padding: 30px;
-        border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0,100,0,0.15);
-        margin-bottom: 25px;
-        text-align: center;
-    }
-    .premium-card h2 { color: white !important; margin: 0; font-size: 36px; font-weight: 800; }
-    .premium-card p { margin: 5px 0 0 0; opacity: 0.9; font-size: 18px; }
-    
-    /* Khung Dinh Dưỡng */
-    .macro-box {
-        background-color: #ffffff;
-        border: 1px solid #e0e0e0;
-        border-radius: 15px;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    }
-    .macro-title {
-        font-weight: bold;
-        color: #1b5e20;
-        font-size: 18px;
-        border-bottom: 2px solid #a5d6a7;
-        padding-bottom: 8px;
-        margin-bottom: 12px;
-    }
-    
-    /* Custom sidebar */
-    .sidebar .sidebar-content { background-image: linear-gradient(#f1f8e9, #ffffff); }
-    </style>
-""", unsafe_html=True)
+# 2. Tùy biến giao diện (CSS Custom Theme) phối màu Emerald & Slate cực sang
+custom_css = """
+<style>
+/* Chỉnh toàn bộ phông chữ và nền */
+.reportview-container { background: #fdfdfd; }
 
+/* Thiết kế thẻ Card cho kết quả chính */
+.premium-card {
+    background: linear-gradient(135deg, #0f9b0f 0%, #006400 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,100,0,0.15);
+    margin-bottom: 25px;
+    text-align: center;
+}
+.premium-card h2 { color: white !important; margin: 0; font-size: 36px; font-weight: 800; }
+.premium-card p { margin: 5px 0 0 0; opacity: 0.9; font-size: 18px; }
+
+/* Khung Dinh Dưỡng */
+.macro-box {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+.macro-title {
+    font-weight: bold;
+    color: #1b5e20;
+    font-size: 18px;
+    border-bottom: 2px solid #a5d6a7;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+/* Custom sidebar */
+.sidebar .sidebar-content { background-image: linear-gradient(#f1f8e9, #ffffff); }
+</style>
+""".strip()
+
+st.markdown(custom_css, unsafe_html=True)
 # 3. Data cấu hình: Nhãn món ăn và Data Dinh dưỡng chuyên sâu
 # (Đảm bảo sắp xếp CLASS_NAMES đúng thứ tự lúc bạn train model)
 CLASS_NAMES = ["Bánh mì", "Bánh xèo", "Bún chả", "Bún bò Huế", "Phở bò"]
