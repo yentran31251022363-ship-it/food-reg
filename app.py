@@ -68,7 +68,7 @@ FOOD_DETAILS = {
 # 4. Hàm load model tối ưu bằng Cache
 @st.cache_resource
 def load_deep_model():
-    return model = tf.keras.models.load_model('model_nhan_dang_mon_an.keras')
+    return tf.keras.models.load_model('model_nhan_dang_mon_an.keras')
 try:
     model = load_deep_model()
 except Exception as e:
